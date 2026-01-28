@@ -15,7 +15,7 @@ const Projects = () => {
         'A collaborative gym management application with real-time updates, members features, and analytics. Inspired by modern productivity tools.',
       image: '/Images/app.png',
       tags: ['React.js', 'TypeScript', 'Supabase', 'Tailwindcss'],
-      github: 'https://github.com',
+      github: 'https://github.com/devranjith',
       demo: 'https://gravity-gym-krishnagiri.vercel.app/',
     },
    
