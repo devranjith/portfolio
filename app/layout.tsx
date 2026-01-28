@@ -7,7 +7,7 @@ import type { ReactNode } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'John Doe - Web Developer Portfolio',
+  title: 'Ranjith K - Web Developer Portfolio',
   description: 'Full Stack Web Developer specializing in modern web technologies',
 }
 

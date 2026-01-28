@@ -39,7 +39,7 @@ const Header = () => {
             className="text-2xl font-bold"
             whileHover={{ scale: 1.05 }}
           >
-            RJ<span className="text-muted-foreground">.</span>
+            Rk<span className="text-muted-foreground">.</span>
           </motion.a>
 
           {/* Desktop Navigation */}
