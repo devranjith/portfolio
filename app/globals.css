@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@radix-ui/themes/styles.css";
+
+
+
+@layer base {
+  :root {
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222.2 84% 4.9%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+
+
+html {
+  scroll-behavior: smooth}
