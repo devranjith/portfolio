@@ -33,7 +33,7 @@ export default function HeroMusicPlayer() {
 
   return (
     <div className="flex flex-col items-center gap-3 group">
-      <audio ref={audioRef} src="/bg/kingt.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/bg/kingt.mp3"  preload="auto" />
       
       <button
         onClick={togglePlay}
