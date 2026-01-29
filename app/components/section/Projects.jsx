@@ -31,8 +31,14 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured 
+            {' '}
+            
+              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
+                 Projects
+              </span>
+          </h2>
+          <p className="text-md text-muted-foreground max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and expertise
           </p>
         </motion.div>
@@ -46,7 +52,7 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
+              <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow border-zinc-800">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={project.image}
@@ -65,9 +71,9 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="flex-1" asChild>
+                    <Button size="sm"  variant="outline" className="flex-1 border-[#2b9348]" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
+                        <Github color='#2b9348' className="mr-2 h-4 w-4" />
                         Code
                       </a>
                     </Button>

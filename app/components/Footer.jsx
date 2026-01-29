@@ -33,7 +33,7 @@ const Footer = () => {
             })}
           </div>
           <div className="text-center text-sm text-muted-foreground">
-            <p>&copy; {currentYear} ranjith. All rights reserved.</p>
+            <p className='text-[#2b9348]'>&copy; {currentYear} ranjith. All rights reserved.</p>
           </div>
         </div>
       </div>

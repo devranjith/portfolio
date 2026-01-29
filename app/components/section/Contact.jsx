@@ -64,7 +64,13 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Get 
+            {' '}
+            
+              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
+                 In Touch
+              </span>
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or just want to chat? Feel free to reach out!
           </p>
@@ -126,7 +132,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8">
+            <Card className="p-8 ">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -167,7 +173,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full text-[#2b9348]" disabled={isSubmitting}>
                   {isSubmitting ? (
                     'Sending...'
                   ) : (

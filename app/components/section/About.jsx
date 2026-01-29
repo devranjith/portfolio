@@ -43,8 +43,14 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">About Me</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            About{' '}
+            
+              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
+                 Me
+              </span>
+          </h2>
+          <p className="text-md text-muted-foreground max-w-2xl mx-auto">
             A passionate developer dedicated to building exceptional digital experiences
           </p>
         </motion.div>
@@ -58,12 +64,12 @@ const About = () => {
             className="mb-16"
           >
             <Card className="p-8 bg-card/50 backdrop-blur">
-              <p className="text-lg leading-relaxed mb-6">
+              <p className="text-md leading-relaxed mb-6">
                 I'm a full-stack web developer with over 2+ years of experience building modern web
                 applications. I specialize in JavaScript technologies and love creating seamless
                 user experiences that solve real-world problems.
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-md leading-relaxed">
                 When I'm not coding, you can find me contributing to open-source projects,
                 writing technical articles, or exploring new technologies. I believe in continuous
                 learning and sharing knowledge with the developer community.
@@ -83,9 +89,9 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <Card className="p-6 h-full hover:border-primary/50 transition-colors">
-                    <Icon className="h-12 w-12 mb-4 text-primary" />
+                    <Icon color='#2b9348' className="h-12 w-12 mb-4 text-primary " />
                     <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
-                    <p className="text-muted-foreground">{skill.description}</p>
+                    <p className="text-muted-foreground text-sm">{skill.description}</p>
                   </Card>
                 </motion.div>
               );
@@ -98,7 +104,13 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-center">Technologies I Work With</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">
+           
+            
+              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
+                 Technologies
+              </span>   {' '}
+               I Work With</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {technologies.map((tech, index) => (
                 <motion.span

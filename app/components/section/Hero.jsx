@@ -27,7 +27,7 @@ const Hero = () => {
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Hi, I'm{' '}
-              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60">
+              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
                 Ranjith
               </span>
             </h1>
@@ -64,7 +64,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" className="border-[#2b9348]" variant="outline" asChild>
               <a href="#contact">Get In Touch</a>
             </Button>
           </motion.div>
@@ -81,7 +81,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Github className="h-6 w-6" />
+              <Github color='#2b9348' className="h-6 w-6" />
             </a>
             <a
               href="https://www.linkedin.com/in/ranjith-k-941058257/"
@@ -95,7 +95,7 @@ const Hero = () => {
               href="mailto:webdevranjit@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Mail className="h-6 w-6" />
+              <Mail  className="h-6 w-6" />
             </a>
           </motion.div>
         </div>

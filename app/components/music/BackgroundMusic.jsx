@@ -4,36 +4,31 @@ import { useEffect, useRef, useState } from 'react';
 export default function HeroMusicPlayer() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
+const [hasEnded, setHasEnded] = useState(false);
+const togglePlay = (e) => {
  
-    const handleFirstInteraction = () => {
-      if (audioRef.current && !isPlaying) {
-        audioRef.current.play()
-          .then(() => setIsPlaying(true))
-          .catch(e => console.log("Still blocked"));
-        window.removeEventListener('click', handleFirstInteraction);
-      }
-    };
-
-    window.addEventListener('click', handleFirstInteraction);
-    return () => window.removeEventListener('click', handleFirstInteraction);
-  }, [isPlaying]);
-
-  const togglePlay = (e) => {
-    e.stopPropagation();
     if (audioRef.current.paused) {
-      audioRef.current.play();
-      setIsPlaying(true);
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+          setHasEnded(false);
+        })
+        .catch(err => console.error("Playback failed:", err));
     } else {
       audioRef.current.pause();
       setIsPlaying(false);
     }
   };
 
+  // This function runs automatically when the song hits the end
+  const handleSongEnd = () => {
+    setIsPlaying(false);
+    setHasEnded(true);
+  };
+
   return (
     <div className="flex flex-col items-center gap-3 group">
-      <audio ref={audioRef} src="/bg/kingt.mp3"  preload="auto" />
+      <audio ref={audioRef} src="/bg/kingt.mp3"  preload="auto" onEnded={handleSongEnd} />
       
       <button
         onClick={togglePlay}
@@ -44,7 +39,7 @@ export default function HeroMusicPlayer() {
           {[1, 2, 3, 4].map((bar) => (
             <div
               key={bar}
-              className={`w-1 bg-indigo-400 rounded-full transition-all duration-300 ${
+              className={`w-1 bg-[#2b9348] rounded-full transition-all duration-300 ${
                 isPlaying ? 'animate-bounce-slow' : 'h-1'
               }`}
               style={{ 

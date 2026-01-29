@@ -29,18 +29,20 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'
+        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border border-[#2b9348]' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <motion.a
-            href="#hero"
-            className="text-2xl font-bold"
-            whileHover={{ scale: 1.05 }}
-          >
-            Rk<span className="text-muted-foreground">.</span>
-          </motion.a>
+        <motion.a
+  href="#hero"
+  className="text-2xl font-bold " 
+  whileHover={{ scale: 1.05 }}
+>
+  R
+  <span className="text-[#2b9348]">k</span>
+  <span className="text-muted-foreground">.</span>
+</motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
