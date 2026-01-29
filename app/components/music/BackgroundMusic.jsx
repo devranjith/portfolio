@@ -51,7 +51,7 @@ const togglePlay = (e) => {
         </div>
 
         <span className="text-xs font-medium tracking-widest uppercase text-white/80">
-          {isPlaying ? 'Now Playing' : 'Click to Play'}
+          {isPlaying ? 'Stop Me' : 'Play Me'}
         </span>
       </button>
 
