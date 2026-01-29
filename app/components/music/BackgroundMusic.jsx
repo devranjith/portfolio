@@ -21,7 +21,7 @@ export default function HeroMusicPlayer() {
   }, [isPlaying]);
 
   const togglePlay = (e) => {
-    e.stopPropagation(); // Prevent the global click listener from double-firing
+    e.stopPropagation();
     if (audioRef.current.paused) {
       audioRef.current.play();
       setIsPlaying(true);
@@ -33,7 +33,7 @@ export default function HeroMusicPlayer() {
 
   return (
     <div className="flex flex-col items-center gap-3 group">
-      <audio ref={audioRef} src="/bg/tulsa.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/bg/kingt.mp3" loop preload="auto" />
       
       <button
         onClick={togglePlay}
