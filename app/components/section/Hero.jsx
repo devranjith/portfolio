@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '../ui/button';
+import BackgroundMusic from '../../components/music/BackgroundMusic'
 
 const Hero = () => {
   return (
@@ -18,6 +19,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
+                  <BackgroundMusic/>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
