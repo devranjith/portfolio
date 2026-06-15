@@ -1,135 +1,85 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code2, Palette, Zap, Users } from 'lucide-react';
-import { Card } from '../ui/card';
+import { Clock, Briefcase, Award } from 'lucide-react';
 
-const About = () => {
-  const skills = [
-    {
-      icon: Code2,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable, and efficient code following best practices.',
-    },
-    {
-      icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Creating beautiful, intuitive interfaces that users love to interact with.',
-    },
-    {
-      icon: Zap,
-      title: 'Performance',
-      description: 'Optimizing applications for speed and efficiency across all devices.',
-    },
-    {
-      icon: Users,
-      title: 'Collaboration',
-      description: 'Working effectively in teams and communicating technical concepts clearly.',
-    },
-  ];
-
-  const technologies = [
-    'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express',
-    'MongoDB', 'PostgreSQL', 'Tailwind CSS', 'Git', 'Docker', 'AWS'
-  ];
-
+export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            About{' '}
-            
-              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
-                 Me
-              </span>
-          </h2>
-          <p className="text-md text-muted-foreground max-w-2xl mx-auto">
-            A passionate developer dedicated to building exceptional digital experiences
-          </p>
-        </motion.div>
+    <section id="about" className="py-24 relative overflow-hidden bg-[#fcfcfc] dark:bg-[#0a0a0a]">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          {/* Left Side: Floating Image */}
+          <div className="flex-1 w-full relative">
+            <motion.div
+              initial={{ y: -15 }}
+              animate={{ y: 15 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut"
+              }}
+              className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0 lg:ml-auto"
+            >
+              <img 
+                src="/about_me.png" 
+                alt="Portrait" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 border border-white/20 rounded-3xl z-20 pointer-events-none"></div>
+            </motion.div>
 
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <Card className="p-8 bg-card/50 backdrop-blur">
-              <p className="text-md leading-relaxed mb-6">
-                I'm a full-stack web developer with over 2+ years of experience building modern web
-                applications. I specialize in JavaScript technologies and love creating seamless
-                user experiences that solve real-world problems.
-              </p>
-              <p className="text-md leading-relaxed">
-                When I'm not coding, you can find me contributing to open-source projects,
-                writing technical articles, or exploring new technologies. I believe in continuous
-                learning and sharing knowledge with the developer community.
-              </p>
-            </Card>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {skills.map((skill, index) => {
-              const Icon = skill.icon;
-              return (
-                <motion.div
-                  key={skill.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="p-6 h-full hover:border-primary/50 transition-colors">
-                    <Icon color='#2b9348' className="h-12 w-12 mb-4 text-primary " />
-                    <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
-                    <p className="text-muted-foreground text-sm">{skill.description}</p>
-                  </Card>
-                </motion.div>
-              );
-            })}
+            {/* Decorative blurs */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/10 dark:bg-blue-400/10 blur-[80px] rounded-full -z-10" />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold mb-6 text-center">
-           
-            
-              <span className="bg-clip-text  bg-linear-to-r from-foreground to-foreground/60 text-[#2b9348]">
-                 Technologies
-              </span>   {' '}
-               I Work With</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {technologies.map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="px-4 py-2 bg-secondary rounded-full text-sm font-medium hover:bg-secondary/80 transition-colors"
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+          {/* Right Side: Content */}
+          <div className="flex-1 w-full">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="font-serif text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+                About Me.
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 font-light mb-8 max-w-lg leading-relaxed">
+                I am a passionate web developer dedicated to building premium digital experiences. I believe in clean code, perfect pixel design, and seamless user interactions.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-6 mb-10">
+                <div className="bg-white dark:bg-[#111] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex items-start gap-4">
+                  <div className="p-3 bg-blue-50 dark:bg-blue-500/10 rounded-xl">
+                    <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-serif font-medium text-black dark:text-white">2+</h4>
+                    <p className="text-sm text-gray-500 mt-1">Years Experience</p>
+                  </div>
+                </div>
+
+                <div className="bg-white dark:bg-[#111] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex items-start gap-4">
+                  <div className="p-3 bg-green-50 dark:bg-green-500/10 rounded-xl">
+                    <Clock className="w-6 h-6 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-serif font-medium text-black dark:text-white">100%</h4>
+                    <p className="text-sm text-gray-500 mt-1">On-Time Delivery</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black text-sm font-medium">
+                <Award className="w-4 h-4" />
+                Available for new projects
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
