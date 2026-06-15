@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,19 +32,19 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border border-[#2b9348]' : 'bg-transparent'
+        isScrolled ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-black/10 dark:border-white/10' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
         <motion.a
   href="#hero"
-  className="text-2xl font-bold " 
+  className="text-2xl font-bold text-black dark:text-white" 
   whileHover={{ scale: 1.05 }}
 >
   R
-  <span className="text-[#2b9348]">k</span>
-  <span className="text-muted-foreground">.</span>
+  <span className="text-[#3A36FF]">k</span>
+  <span className="text-gray-400 dark:text-gray-600">.</span>
 </motion.a>
 
           {/* Desktop Navigation */}
@@ -52,11 +53,12 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium hover:text-primary transition-colors"
+                className="text-sm font-medium text-black dark:text-white hover:text-[#3A36FF] dark:hover:text-[#3A36FF] transition-colors"
               >
                 {item.name}
               </a>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,12 +84,15 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-sm font-medium hover:text-primary transition-colors"
+                className="block text-sm font-medium text-black dark:text-white hover:text-[#3A36FF] dark:hover:text-[#3A36FF] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
+            <div className="pt-2 border-t border-border">
+               <ThemeToggle />
+            </div>
           </motion.div>
         )}
       </nav>

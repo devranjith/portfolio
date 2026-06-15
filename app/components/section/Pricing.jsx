@@ -84,12 +84,12 @@ export default function Pricing() {
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
               className={`relative bg-white dark:bg-[#111] border rounded-3xl p-8 flex flex-col ${
                 plan.popular 
-                  ? 'border-blue-500 shadow-[0_0_40px_rgba(59,130,246,0.15)] dark:shadow-[0_0_40px_rgba(59,130,246,0.05)]' 
+                  ? 'border-[#3A36FF] shadow-[0_0_40px_rgba(58,54,255,0.15)] dark:shadow-[0_0_40px_rgba(58,54,255,0.05)]' 
                   : 'border-gray-200 dark:border-gray-800'
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#3A36FF] text-white px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider shadow-[0_0_15px_rgba(58,54,255,0.4)]">
                   Most Popular
                 </div>
               )}
@@ -103,7 +103,7 @@ export default function Pricing() {
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, j) => (
                     <li key={j} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-300">
-                      <Check className="w-5 h-5 text-blue-500 shrink-0" />
+                      <Check className="w-5 h-5 text-[#3A36FF] shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -113,7 +113,7 @@ export default function Pricing() {
               <Button 
                 className={`w-full py-6 rounded-xl text-base ${
                   plan.popular 
-                    ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                    ? 'bg-[#3A36FF] hover:bg-[#2b27db] text-white' 
                     : 'bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200'
                 }`}
               >

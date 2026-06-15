@@ -34,7 +34,7 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
         <motion.div 
           animate={{ rotate: isOpen ? 45 : 0 }} 
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="flex-shrink-0 text-blue-500"
+          className="flex-shrink-0 text-[#3A36FF]"
         >
           <Plus className="w-6 h-6" />
         </motion.div>
