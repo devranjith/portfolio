@@ -21,12 +21,10 @@ export default function Contact() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [history]);
 
-  // Keep input focused
-  useEffect(() => {
-    const handleClick = () => inputRef.current?.focus();
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
+  // Focus input when clicking inside the terminal
+  const handleTerminalClick = () => {
+    inputRef.current?.focus();
+  };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && input.trim() !== '') {
@@ -95,7 +93,10 @@ export default function Contact() {
           </div>
 
           {/* Terminal Body */}
-          <div className="p-6 md:p-8 font-mono text-sm md:text-base min-h-[400px] flex flex-col">
+          <div 
+            className="p-6 md:p-8 font-mono text-sm md:text-base min-h-[400px] flex flex-col cursor-text"
+            onClick={handleTerminalClick}
+          >
             
             {/* Output History */}
             {history.map((line, index) => (
@@ -132,7 +133,6 @@ export default function Contact() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   className="flex-1 bg-transparent border-none outline-none text-white caret-white"
-                  autoFocus
                   spellCheck="false"
                   autoComplete="off"
                 />
